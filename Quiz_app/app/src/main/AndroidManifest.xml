@@ -10,8 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
         <activity
+            android:name=".QuizQuestionsActivity"
+            android:screenOrientation="portrait"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
+            android:theme="@style/NoactionBar"
             android:screenOrientation="portrait">
 
             <intent-filter>
