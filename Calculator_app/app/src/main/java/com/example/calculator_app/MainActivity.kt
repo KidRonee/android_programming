@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
     private fun calculate(tvValue: String, prefix: String) {
         var _operator = ""
         for (value in tvValue)
-            if ((!value.isDigit() && !value.equals("."))) _operator = value.toString()
+            if (!value.isDigit() && !value.equals(".")) _operator = value.toString()
 
         val splitValue = tvValue.split("[*/+\\-]".toRegex())
         var one = splitValue[0]
