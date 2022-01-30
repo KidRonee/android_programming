@@ -61,55 +61,30 @@ class MainActivity : AppCompatActivity() {
                     tvValue = tvValue.substring(1) // gets rid of the first entry to avoid application crash...
                 }
 
-                if (tvValue.contains("-")) {
-                    val splitValue = tvValue.split("-")
-
-                    var one = splitValue[0]
-                    var two = splitValue[1]
-
-                    if (prefix.isNotEmpty()) {
-                        one = prefix + one
-                    }
-
-                    tvInput?.text = removeZeroAfterDot((one.toDouble() - two.toDouble()).toString())
-                } else if (tvValue.contains("+")) {
-                    val splitValue = tvValue.split("+")
-
-                    var one = splitValue[0]
-                    var two = splitValue[1]
-
-                    if (prefix.isNotEmpty()) {
-                        one = prefix + one
-                    }
-
-                    tvInput?.text = removeZeroAfterDot((one.toDouble() + two.toDouble()).toString())
-                } else if (tvValue.contains("/")) {
-                    val splitValue = tvValue.split("/")
-
-                    var one = splitValue[0]
-                    var two = splitValue[1]
-
-                    if (prefix.isNotEmpty()) {
-                        one = prefix + one
-                    }
-
-                    tvInput?.text = removeZeroAfterDot((one.toDouble() / two.toDouble()).toString())
-                } else if (tvValue.contains("*")) {
-                    val splitValue = tvValue.split("*")
-
-                    var one = splitValue[0]
-                    var two = splitValue[1]
-
-                    if (prefix.isNotEmpty()) {
-                        one = prefix + one
-                    }
-
-                    tvInput?.text = removeZeroAfterDot((one.toDouble() * two.toDouble()).toString())
-                }
-
+                calculate(tvValue, prefix)
             } catch (e: ArithmeticException) {
                 e.printStackTrace()
             }
+        }
+    }
+
+    private fun calculate(tvValue: String, prefix: String) {
+        var _operator = ""
+        for (value in tvValue)
+            if ((!value.isDigit() && !value.equals("."))) _operator = value.toString()
+
+        val splitValue = tvValue.split("[*/+\\-]".toRegex())
+        var one = splitValue[0]
+        val two = splitValue[1]
+
+        if (prefix.isNotEmpty())
+            one = prefix + one
+
+        when (_operator) {
+            "*" -> tvInput?.text = removeZeroAfterDot((one.toDouble() * two.toDouble()).toString())
+            "/" -> tvInput?.text = removeZeroAfterDot((one.toDouble() / two.toDouble()).toString())
+            "+" -> tvInput?.text = removeZeroAfterDot((one.toDouble() + two.toDouble()).toString())
+            "-" -> tvInput?.text = removeZeroAfterDot((one.toDouble() - two.toDouble()).toString())
         }
     }
 
@@ -119,8 +94,6 @@ class MainActivity : AppCompatActivity() {
             value = result.substring(0, result.length - 2)
         return value
     }
-
-
 
     private fun isOperatorAdded(value : String) : Boolean {
         return if(value.startsWith("-")) {
