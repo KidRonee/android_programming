@@ -80,8 +80,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:background="@color/design_default_color_on_primary"
-                android:text="Start"
+                android:background="@drawable/my_button"
+                android:text="START"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
         </LinearLayout>

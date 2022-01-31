@@ -3,8 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Mathi/StudioProjects/android_programming/Quiz_app/app/src/main/res/drawable/correct_option_border_bg.xml" value="0.2565789473684211" />
+        <entry key="..\:/Users/Mathi/StudioProjects/android_programming/Quiz_app/app/src/main/res/drawable/default_option_border_bg.xml" value="0.24649122807017543" />
+        <entry key="..\:/Users/Mathi/StudioProjects/android_programming/Quiz_app/app/src/main/res/drawable/incorrect_option_border_bg.xml" value="0.24649122807017543" />
+        <entry key="..\:/Users/Mathi/StudioProjects/android_programming/Quiz_app/app/src/main/res/drawable/my_button.xml" value="0.21052631578947367" />
+        <entry key="..\:/Users/Mathi/StudioProjects/android_programming/Quiz_app/app/src/main/res/drawable/selectged_option_border_bg.xml" value="0.21052631578947367" />
+        <entry key="..\:/Users/Mathi/StudioProjects/android_programming/Quiz_app/app/src/main/res/drawable/white_option_border_bg.xml" value="0.24649122807017543" />
         <entry key="..\:/Users/Mathi/StudioProjects/android_programming/Quiz_app/app/src/main/res/layout/activity_main.xml" value="0.23097826086956522" />
         <entry key="..\:/Users/Mathi/StudioProjects/android_programming/Quiz_app/app/src/main/res/layout/activity_quiz_questions.xml" value="0.22" />
+        <entry key="..\:/Users/Mathi/StudioProjects/android_programming/Quiz_app/app/src/main/res/layout/activity_result.xml" value="0.22" />
       </map>
     </option>
   </component>
